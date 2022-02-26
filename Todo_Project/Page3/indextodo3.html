@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>To Do List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./stylestodo3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="head-container">
+                <div class="head-container1">
+                    <span id="tasks">Tasks</span>
+                    <span id="lists">Lists</span>
+                </div>
+                <div class="head-container2">
+                    <div class="plus-circle">
+                        <i class="fa fa-plus-circle" style="font-size:40px; color:red"></i>
+                    </div>
+                    <div id="add-list">
+                        Add List
+                    </div>
+                </div>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-head">
+                        Trip to Paris
+                    </div>
+                    <div class="completed-task">
+                        Completed Task
+                    </div>
+                    <div class="pending-task">
+                        <form>
+                            <input class="checkbox" name="checkbox1" type="checkbox" id="checkbox1">
+                            <label for="checkbox1">Pending Tasks</label>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        My Todo List
+                    </div>
+                    <div class="completed-task">
+                        Completed Task
+                    </div>
+                    <div class="pending-task">
+                        <form>
+                            <input class="checkbox" name="checkbox2" type="checkbox" id="checkbox2">
+                            <label for="checkbox2">Pending Tasks</label>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        My Todo List
+                    </div>
+                    <div class="completed-task">
+                        Completed Task
+                    </div>
+                    <div class="pending-task">
+                        <form>
+                            <input class="checkbox" name="checkbox3" type="checkbox" id="checkbox3">
+                            <label for="checkbox3">Pending Tasks</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup">
+            <p id="add-new">Add New List</p>
+            <textarea class="popup-bar"></textarea>
+            <button class="popup-button">ADD</button>
+        </div>
+    </body>
+</html>

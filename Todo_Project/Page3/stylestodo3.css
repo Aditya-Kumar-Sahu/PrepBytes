@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container{
+    filter: blur(5px);
+}
+
+.head-container{
+    width: 50%;
+    height: 100%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.head-container1{
+    width: 35%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+#tasks{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+#lists{
+    font-size: 2.5rem;
+    margin-left: 10px;
+    opacity: 0.5;
+}
+
+.head-container2{
+    width: 30%;
+    height: 100%;
+    padding-top: 20px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#add-list{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    font-size: 30px;
+    opacity: 0.5;
+    padding-top: 20px;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.card{
+    margin-top: 10px;
+    border: 1.5px solid orangered;
+    height: 45vh;
+    width: 25%;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 6px 6px 10px lightgray;
+    margin: auto;
+}
+
+.card-head{
+    position: absolute;
+    top: 15px;
+    font-size: 27px;
+    right: 0px;
+    width: 85%;
+    text-align: left;
+    height: 15%;
+    color: orangered;
+    border-bottom: 2px solid grey;
+}
+
+.completed-task{
+    width: 90%;
+    height: 10%;
+    font-size: 23px;
+    color: orangered;
+    text-align: right;
+    position: absolute;
+    top: 35%;
+    font-weight: bold;
+    text-decoration: line-through;
+}
+
+.pending-task{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: 52%;
+    text-align: left;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.checkbox{
+    width: 17px;
+    height: 17px;
+}
+
+.popup{
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    height: 25vh;
+    width: 27%;
+    border: 1.5px solid orangered;
+    border-radius: 10px;
+    color: orangered;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 6px 6px 10px gray;
+    background-color: white;
+    padding: 20px;
+}
+
+#add-new{
+    opacity: 0.7;
+    font-size: 25px;
+}
+
+.popup-bar{
+    border-radius: 5px;
+    width: 80%;
+    height: 27%;
+    box-shadow: 1px 1px 3px gray;
+    border: 1.5px solid orangered;
+    font-size: 20px;
+}
+
+.popup-button{
+    width: 22%;
+    height: 22%;
+    background-color: orangered;
+    color: white;
+    border-color: orangered;
+    border-radius: 25px;
+    font-size: 18px;
+}
