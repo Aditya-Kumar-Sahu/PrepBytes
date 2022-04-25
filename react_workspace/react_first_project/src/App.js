@@ -1,10 +1,10 @@
-import Heading from "./components/heading"
+import HeadingClass from "./components/headingClass"
 import Banner from "./components/banner"
 
 function App(){
     return(
         <>
-        <Heading />
+        <HeadingClass />
         <Banner />
         </>
     )
