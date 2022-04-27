@@ -1,5 +1,5 @@
 import { Component } from "react"
-import HeadingClass from "./components/headingClass"
+// import HeadingClass from "./components/headingClass"
 
 // function handleClick(){
 //     console.log("Button is Clicked")
@@ -18,29 +18,53 @@ import HeadingClass from "./components/headingClass"
 // }
 
 class App extends Component{
-    handleClick(){
-        console.log("Button is Clicked")
-    }
+    // handleClick(){
+    //     console.log("Button is Clicked")
+    // }
     
-    handleInputChange(){
-        console.log("Someone is typing")
-    }
+    // handleInputChange(){
+    //     console.log("Someone is typing")
+    // }
     
-    onMouseEnter(){
-        console.log("Mouse has entered")
-    }
+    // onMouseEnter(){
+    //     console.log("Mouse has entered")
+    // }
     
-    HandleFocus(){
-        console.log("Input in Focus")
+    // HandleFocus(){
+    //     console.log("Input in Focus")
+    // }
+
+    // constructor(){
+    //     super();    //links to parent class's constructor
+    //     this.handleClick = this.handleClick.bind(this)  //arrow function not needed if constructor have this line
+    // }
+
+    state = {
+        counter: 1,
+        heading: "Welcome to React"
+    }
+
+    handleClick = () => {       //to avoid 'this not defined' error. Arrow function is most preferable
+        let localcounter = this.state.counter
+        this.setState({
+            counter: localcounter+1,
+            heading: "Learning states in React"
+        })
     }
 
     render(){
         return(
             <>
-            <HeadingClass />
+            {/* <HeadingClass />
             <button onClick={this.handleClick} id="button-1">Primary Button</button>
             <button onClick={this.handleClick} id="button-2">Secondary Button</button>
-            <input onChange={this.handleInputChange} onMouseEnter={this.onMouseEnter} onFocus={this.HandleFocus}/>
+            <input onChange={this.handleInputChange} onMouseEnter={this.onMouseEnter} onFocus={this.HandleFocus}/> */}
+
+            <h1>{this.state.heading}</h1>
+            <button onClick={this.handleClick}>Add</button>
+            {/* instead of using arrow function <button onClick={this.handleClick.bind(this)}>Add</button> */}
+            {/* instead of using arrow function <button onClick={(event)=>this.handleClick(event)}>Add</button> */}
+            <p>{this.state.counter}</p>
             </>
         )
     }
