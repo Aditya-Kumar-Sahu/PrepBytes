@@ -73,26 +73,90 @@
 // export default App
 
 
-import { Component } from "react";
-import Courses from "./components/courses";
-import Heading from "./components/heading";
-import CourseJson from "./courses.json";
+
+
+
+// import { Component } from "react";
+// import Courses from "./components/courses";
+// import Heading from "./components/heading";
+// import CourseJson from "./courses.json";
+
+// class App extends Component{
+
+//     state={
+//         heading: "Welcome to interesting world of React",
+//         courseList: CourseJson,
+//     }
+
+//     render(){
+//         return(
+//             <>
+//             <Heading heading={this.state.heading}/>
+//             <Courses courseList={this.state.courseList}/>
+//             </>
+//         )
+//     }
+// }
+
+// export default App
+
+
+
+
+import React, { Component } from "react";
+import Banner from "./components/banner";
 
 class App extends Component{
 
-    state={
-        heading: "Welcome to interesting world of React",
-        courseList: CourseJson,
+    constructor(){
+        super();
+        console.log("1. constructor method is called")
+        this.state={
+            heading: "Welcome to React",
+            isBannerVisible: true,
+        }
+    }
+
+    handleClick = () => {
+        this.setState({
+            heading: "Hope you are learning React",
+            isBannerVisible: false,
+        })
+    }
+    
+    static getDerivedStateFromProps(){
+        console.log("2. getDerivedFromProps method is called")
+        return null;
+    }
+
+    shouldComponentUpdate(){
+        console.log("5. shouldComponentUpdate method is called")
+        return true
     }
 
     render(){
+        console.log("3. render method is called")
         return(
-            <>
-            <Heading heading={this.state.heading}/>
-            <Courses courseList={this.state.courseList}/>
+            <> 
+               <h1>Welcome to React</h1>
+               <button onClick={this.handleClick}>Click Me</button>
+               {this.state.isBannerVisible?<Banner />: null}
             </>
         )
     }
+
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        console.log("7. getSnapshotBeforeUpdate method is called")
+        return null
+    }
+
+    componentDidMount(){
+        console.log("4. componentDidMount method is called")
+    }
+
+    componentDidUpdate(){
+        console.log("6. componentDidUpdate method is called")
+    }
 }
 
-export default App
+export default App;
