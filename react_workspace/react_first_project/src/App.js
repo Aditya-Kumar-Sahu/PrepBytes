@@ -1,70 +1,95 @@
-import { Component } from "react"
-// import HeadingClass from "./components/headingClass"
+// import { Component } from "react"
+// // import HeadingClass from "./components/headingClass"
 
-// function handleClick(){
-//     console.log("Button is Clicked")
+// // function handleClick(){
+// //     console.log("Button is Clicked")
+// // }
+
+// // function handleInputChange(){
+// //     console.log("Someone is typing")
+// // }
+
+// // function onMouseEnter(){
+// //     console.log("Mouse has entered")
+// // }
+
+// // function HandleFocus(){
+// //     console.log("Input in Focus")
+// // }
+
+// class App extends Component{
+//     // handleClick(){
+//     //     console.log("Button is Clicked")
+//     // }
+    
+//     // handleInputChange(){
+//     //     console.log("Someone is typing")
+//     // }
+    
+//     // onMouseEnter(){
+//     //     console.log("Mouse has entered")
+//     // }
+    
+//     // HandleFocus(){
+//     //     console.log("Input in Focus")
+//     // }
+
+//     // constructor(){
+//     //     super();    //links to parent class's constructor
+//     //     this.handleClick = this.handleClick.bind(this)  //arrow function not needed if constructor have this line
+//     // }
+
+//     state = {
+//         counter: 1,
+//         heading: "Welcome to React"
+//     }
+
+//     handleClick = () => {       //to avoid 'this not defined' error. Arrow function is most preferable
+//         let localcounter = this.state.counter
+//         this.setState({
+//             counter: localcounter+1,
+//             heading: "Learning states in React"
+//         })
+//     }
+
+//     render(){
+//         return(
+//             <>
+//             {/* <HeadingClass />
+//             <button onClick={this.handleClick} id="button-1">Primary Button</button>
+//             <button onClick={this.handleClick} id="button-2">Secondary Button</button>
+//             <input onChange={this.handleInputChange} onMouseEnter={this.onMouseEnter} onFocus={this.HandleFocus}/> */}
+
+//             <h1>{this.state.heading}</h1>
+//             <button onClick={this.handleClick}>Add</button>
+//             {/* instead of using arrow function <button onClick={this.handleClick.bind(this)}>Add</button> */}
+//             {/* instead of using arrow function <button onClick={(event)=>this.handleClick(event)}>Add</button> */}
+//             <p>{this.state.counter}</p>
+//             </>
+//         )
+//     }
 // }
 
-// function handleInputChange(){
-//     console.log("Someone is typing")
-// }
+// export default App
 
-// function onMouseEnter(){
-//     console.log("Mouse has entered")
-// }
 
-// function HandleFocus(){
-//     console.log("Input in Focus")
-// }
+import { Component } from "react";
+import Courses from "./components/courses";
+import Heading from "./components/heading";
+import CourseJson from "./courses.json";
 
 class App extends Component{
-    // handleClick(){
-    //     console.log("Button is Clicked")
-    // }
-    
-    // handleInputChange(){
-    //     console.log("Someone is typing")
-    // }
-    
-    // onMouseEnter(){
-    //     console.log("Mouse has entered")
-    // }
-    
-    // HandleFocus(){
-    //     console.log("Input in Focus")
-    // }
 
-    // constructor(){
-    //     super();    //links to parent class's constructor
-    //     this.handleClick = this.handleClick.bind(this)  //arrow function not needed if constructor have this line
-    // }
-
-    state = {
-        counter: 1,
-        heading: "Welcome to React"
-    }
-
-    handleClick = () => {       //to avoid 'this not defined' error. Arrow function is most preferable
-        let localcounter = this.state.counter
-        this.setState({
-            counter: localcounter+1,
-            heading: "Learning states in React"
-        })
+    state={
+        heading: "Welcome to interesting world of React",
+        courseList: CourseJson,
     }
 
     render(){
         return(
             <>
-            {/* <HeadingClass />
-            <button onClick={this.handleClick} id="button-1">Primary Button</button>
-            <button onClick={this.handleClick} id="button-2">Secondary Button</button>
-            <input onChange={this.handleInputChange} onMouseEnter={this.onMouseEnter} onFocus={this.HandleFocus}/> */}
-
-            <h1>{this.state.heading}</h1>
-            <button onClick={this.handleClick}>Add</button>
-            {/* instead of using arrow function <button onClick={this.handleClick.bind(this)}>Add</button> */}
-            {/* instead of using arrow function <button onClick={(event)=>this.handleClick(event)}>Add</button> */}
-            <p>{this.state.counter}</p>
+            <Heading heading={this.state.heading}/>
+            <Courses courseList={this.state.courseList}/>
             </>
         )
     }
