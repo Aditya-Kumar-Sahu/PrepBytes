@@ -9,11 +9,20 @@ import { Component } from "react";
 
 class Banner extends Component{
 
+    state={
+        bannerHeading: this.props.bannerHeading
+    }
+
+    static getDerivedStateFromProps(props, state){
+        if (props.bannerHeading === "Banner has changed")
+            return({bannerHeading: "This is the banner"})
+        return null
+    }
 
     render(){
         return(
             <>
-                <h2>Banner</h2>
+                <h2>{this.state.bannerHeading}</h2>
             </>
         )
     }

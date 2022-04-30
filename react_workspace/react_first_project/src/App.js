@@ -114,22 +114,25 @@ class App extends Component{
         this.state={
             heading: "Welcome to React",
             isBannerVisible: true,
+            bannerHeading: "Banner",
         }
     }
 
     handleClick = () => {
         this.setState({
             heading: "Hope you are learning React",
-            isBannerVisible: false,
+            // isBannerVisible: false,
+            bannerHeading: "Banner has changed"
         })
     }
     
-    static getDerivedStateFromProps(){
+    static getDerivedStateFromProps(props, state){
+        console.log("getDerivedFromProps", props, state)
         console.log("2. getDerivedFromProps method is called")
         return null;
     }
 
-    shouldComponentUpdate(){
+    shouldComponentUpdate(nextProps, nextState){
         console.log("5. shouldComponentUpdate method is called")
         return true
     }
@@ -138,23 +141,28 @@ class App extends Component{
         console.log("3. render method is called")
         return(
             <> 
-               <h1>Welcome to React</h1>
+               <h1>{this.state.heading}</h1>
                <button onClick={this.handleClick}>Click Me</button>
-               {this.state.isBannerVisible?<Banner />: null}
+               {this.state.isBannerVisible?<Banner bannerHeading={this.state.bannerHeading} />: null}
             </>
         )
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState){
         console.log("7. getSnapshotBeforeUpdate method is called")
-        return null
+
+        let heading=prevState.heading
+        console.log("getSnapshotBeforeUpdate heading stored", heading)
+        return heading
     }
 
     componentDidMount(){
+        // data feching from backend (important)
         console.log("4. componentDidMount method is called")
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log(prevState, snapshot)
         console.log("6. componentDidUpdate method is called")
     }
 }
